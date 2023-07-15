@@ -1,8 +1,7 @@
-import Express from "express";
-const app = new Express();
+import express from "express";
+import { movieRoutes } from "./route/movieRouter.js";
+const app = new express();
 
-app.use((req, res, next) => {
-  res.send("<h1>Hello world!</h1>");
-});
+app.use("/movie", movieRoutes);
 
 app.listen(666);
