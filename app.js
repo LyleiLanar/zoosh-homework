@@ -1,7 +1,17 @@
 import express from "express";
-import { movieRoutes } from "./route/movieRouter.js";
+import { graphqlHTTP } from "express-graphql";
+import { schema } from "./graphql/schema.js";
+import router from "./resolver/router.js";
+
 const app = new express();
 
-app.use("/movie", movieRoutes);
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: schema,
+    rootValue: router,
+    graphiql: true,
+  })
+);
 
 app.listen(666);
