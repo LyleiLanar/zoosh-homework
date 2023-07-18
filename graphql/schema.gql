@@ -1,11 +1,19 @@
 type Movie {
   id: ID!
-  title: String!
-  category: String!
-  score: String!
+  name: String!
+  genres: [Genre]!
+  score: Float!
+  wikiURL: String
+  description: String
+}
+
+type Genre {
+  id: ID!
+  name: String!
 }
 
 type Query {
   hello: String
-  getMovies: [Movie]
+  getFirstPopularMovie: Movie
+  searchMovie(keyword: String!, wikiToggle: Boolean): [Movie]
 }
