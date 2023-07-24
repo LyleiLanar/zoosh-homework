@@ -1,4 +1,4 @@
-import * as Movie from "../services/movieService.js";
+import * as Movie from "../../services/movieService.js";
 
 export const sayHello = () => {
   return "Hello world!";

@@ -2,7 +2,7 @@ import {
   sayHello,
   getFirstPopularMovie,
   searchMovie,
-} from "./movieResolver.js";
+} from "./resolver/movieResolver.js";
 
 const router = {
   hello: sayHello,
